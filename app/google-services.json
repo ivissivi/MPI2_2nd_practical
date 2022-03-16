@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "844829912665",
+    "project_id": "ndpractical-598f1",
+    "storage_bucket": "ndpractical-598f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844829912665:android:a73254984bcf1c7a5a0b48",
+        "android_client_info": {
+          "package_name": "com.example.a2ndpractical"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "844829912665-ef4153qbt0vqjorn0pm2a2jbmjk3kgc5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXpjw78R8wy5EwSuhcxMfq_1BVupQdPHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "844829912665-ef4153qbt0vqjorn0pm2a2jbmjk3kgc5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
