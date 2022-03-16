@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">2ndPractical</string>
-    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_repository">Reader Activity</string>
+    <string name="toolbar_title">Title</string>
 </resources>
