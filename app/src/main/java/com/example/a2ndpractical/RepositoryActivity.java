@@ -5,22 +5,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
-
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
-import com.kwabenaberko.newsapilib.NewsApiClient;
-import com.kwabenaberko.newsapilib.models.request.EverythingRequest;
-import com.kwabenaberko.newsapilib.models.request.SourcesRequest;
-import com.kwabenaberko.newsapilib.models.request.TopHeadlinesRequest;
-import com.kwabenaberko.newsapilib.models.response.ArticleResponse;
-import com.kwabenaberko.newsapilib.models.response.SourcesResponse;
-import com.squareup.picasso.Picasso;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -32,19 +16,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-import java.io.IOException;
+import com.kwabenaberko.newsapilib.NewsApiClient;
+import com.kwabenaberko.newsapilib.models.request.EverythingRequest;
+import com.kwabenaberko.newsapilib.models.response.ArticleResponse;
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
 public class RepositoryActivity extends AppCompatActivity {
 
@@ -62,7 +43,7 @@ public class RepositoryActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final MyListAdapter adapter = new MyListAdapter(this, titles, descriptions, images, urls, authors, publishedDates);
+        final MyListAdapter adapter = new MyListAdapter(this, titles, descriptions, authors, publishedDates);
 
         ListView listView = findViewById(R.id.item_list);
         listView.setAdapter(adapter);
@@ -123,26 +104,23 @@ public class RepositoryActivity extends AppCompatActivity {
         private final Activity context;
         private final ArrayList<String> maintitle;
         private final ArrayList<String> description;
-        private final ArrayList<String> imgid;
-        private final ArrayList<String> url;
         private final ArrayList<String> author;
         private final ArrayList<String> datePublished;
 
         public MyListAdapter(Activity context, ArrayList<String> maintitle, ArrayList<String> description,
-                             ArrayList<String> imgid, ArrayList<String> url, ArrayList<String> author, ArrayList<String> datePublished) {
+                             ArrayList<String> author, ArrayList<String> datePublished) {
             super(context, R.layout.listview_item, maintitle);
             this.context = context;
             this.maintitle = maintitle;
             this.description = description;
-            this.imgid = imgid;
-            this.url = url;
             this.author = author;
             this.datePublished = datePublished;
         }
 
+        @SuppressLint("SetTextI18n")
         public View getView(int position, View view, ViewGroup parent) {
             LayoutInflater inflater=context.getLayoutInflater();
-            @SuppressLint("ViewHolder") View rowView=inflater.inflate(R.layout.listview_item, null,true);
+            @SuppressLint({"ViewHolder", "InflateParams"}) View rowView=inflater.inflate(R.layout.listview_item, null,true);
 
             TextView titleText = rowView.findViewById(R.id.title);
             ImageView imageView = rowView.findViewById(R.id.icon);
@@ -155,7 +133,7 @@ public class RepositoryActivity extends AppCompatActivity {
 //            imageView.setImageResource();
             subtitleText.setText(description.get(position));
             authorText.setText("by " + author.get(position));
-            datePublishedText.setText("Published at: " + datePublished.get(position).substring(0, 10));
+            datePublishedText.setText("Published at: " + datePublished.get(position).substring(0, 10) + " " + datePublished.get(position).substring(11, 16));
 
             return rowView;
 

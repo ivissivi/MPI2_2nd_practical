@@ -3,7 +3,6 @@ package com.example.a2ndpractical;
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,7 +14,6 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import com.example.a2ndpractical.databinding.ActivityMapsBinding;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -29,9 +27,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
-    private ActivityMapsBinding binding;
-    private FusedLocationProviderClient fusedLocationClient;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
 
     @Override
@@ -52,7 +47,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMapsBinding.inflate(getLayoutInflater());
+        com.example.a2ndpractical.databinding.ActivityMapsBinding binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -91,24 +86,21 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
      */
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
-        mMap = googleMap;
         LatLng rujiena = new LatLng(57.893891, 25.339336
         );
-        mMap.addMarker(new MarkerOptions().position(rujiena).title("Marker in Rūjiena"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(rujiena));
+        googleMap.addMarker(new MarkerOptions().position(rujiena).title("Marker in Rūjiena"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(rujiena));
 
         if (ActivityCompat.checkSelfPermission(this.getApplicationContext(),
                 ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.checkSelfPermission(this.getApplicationContext(),
                     ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
 
-                fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+                FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
                 fusedLocationClient.getLastLocation()
                         .addOnSuccessListener(this, location -> {
                             // Got last known location. In some rare situations this can be null.
-                            if (location != null) {
-                                // Logic to handle location object
-                            }
+                            // Logic to handle location object
                         });
             } else {
                 PermissionUtils.requestPermission(this, LOCATION_PERMISSION_REQUEST_CODE,
