@@ -8,9 +8,10 @@
     <ImageView
         android:id="@+id/icon"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="229dp"
         android:padding="10dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        tools:ignore="ContentDescription" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +26,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
             android:justificationMode="inter_word"
-            android:padding="10dp"
+            android:padding="2dp"
             android:text="Medium Text"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textStyle="bold" />
@@ -37,7 +38,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:justificationMode="inter_word"
-            android:text="TextView" />
+            android:text="@string/textview" />
 
         <TextView
             android:id="@+id/author"
@@ -45,9 +46,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:justificationMode="inter_word"
-            android:text="Author"
+            android:text="@string/author"
             android:textAppearance="?android:attr/textAppearanceListItemSmall"
-            android:textSize="12dp"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
         <TextView
@@ -56,9 +57,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:justificationMode="inter_word"
-            android:text="Publisher"
+            android:text="@string/publisher"
             android:textAppearance="?android:attr/textAppearanceListItemSmall"
-            android:textSize="12dp"
+            android:textSize="12sp"
             android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

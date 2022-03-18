@@ -4,10 +4,10 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.DialogFragment;
@@ -30,65 +30,6 @@ public abstract class PermissionUtils {
             // Location permission has not been granted yet, request it.
             ActivityCompat.requestPermissions(activity, new String[]{permission}, requestId);
 
-        }
-    }
-
-    /**
-     * Checks if the result contains a {@link PackageManager#PERMISSION_GRANTED} result for a
-     * permission from a runtime permissions request.
-     *
-     * @see androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback
-     */
-    public static boolean isPermissionGranted(String[] grantPermissions, int[] grantResults,
-                                              String permission) {
-        for (int i = 0; i < grantPermissions.length; i++) {
-            if (permission.equals(grantPermissions[i])) {
-                return grantResults[i] == PackageManager.PERMISSION_GRANTED;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * A dialog that displays a permission denied message.
-     */
-    public static class PermissionDeniedDialog extends DialogFragment {
-
-        private static final String ARGUMENT_FINISH_ACTIVITY = "finish";
-
-        private boolean finishActivity = false;
-
-        /**
-         * Creates a new instance of this dialog and optionally finishes the calling Activity
-         * when the 'Ok' button is clicked.
-         */
-        public static PermissionDeniedDialog newInstance(boolean finishActivity) {
-            Bundle arguments = new Bundle();
-            arguments.putBoolean(ARGUMENT_FINISH_ACTIVITY, finishActivity);
-
-            PermissionDeniedDialog dialog = new PermissionDeniedDialog();
-            dialog.setArguments(arguments);
-            return dialog;
-        }
-
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            finishActivity = getArguments().getBoolean(ARGUMENT_FINISH_ACTIVITY);
-
-            return new AlertDialog.Builder(getActivity())
-                    .setMessage("Permissions denied")
-                    .setPositiveButton(android.R.string.ok, null)
-                    .create();
-        }
-
-        @Override
-        public void onDismiss(DialogInterface dialog) {
-            super.onDismiss(dialog);
-            if (finishActivity) {
-                Toast.makeText(getActivity(), "Permissions required",
-                        Toast.LENGTH_SHORT).show();
-                getActivity().finish();
-            }
         }
     }
 
@@ -129,38 +70,37 @@ public abstract class PermissionUtils {
             return dialog;
         }
 
+        @NonNull
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             Bundle arguments = getArguments();
+            assert arguments != null;
             final int requestCode = arguments.getInt(ARGUMENT_PERMISSION_REQUEST_CODE);
             finishActivity = arguments.getBoolean(ARGUMENT_FINISH_ACTIVITY);
 
             return new AlertDialog.Builder(getActivity())
                     .setMessage("These permissions are really required for this application to actually work")
-                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            // After click on Ok, request the permission.
-                            ActivityCompat.requestPermissions(getActivity(),
-                                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                                    requestCode);
-                            // Do not finish the Activity while requesting permission.
-                            finishActivity = false;
-                        }
+                    .setPositiveButton(android.R.string.ok, (dialog, which) -> {
+                        // After click on Ok, request the permission.
+                        ActivityCompat.requestPermissions(requireActivity(),
+                                new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                                requestCode);
+                        // Do not finish the Activity while requesting permission.
+                        finishActivity = false;
                     })
                     .setNegativeButton(android.R.string.cancel, null)
                     .create();
         }
 
         @Override
-        public void onDismiss(DialogInterface dialog) {
+        public void onDismiss(@NonNull DialogInterface dialog) {
             super.onDismiss(dialog);
             if (finishActivity) {
                 Toast.makeText(getActivity(),
                         "We really need the permissions",
                         Toast.LENGTH_SHORT)
                         .show();
-                getActivity().finish();
+                requireActivity().finish();
             }
         }
     }
