@@ -8,4 +8,101 @@
     <string name="textview">TextView</string>
     <string name="author">Author</string>
     <string name="publisher">Publisher</string>
+
+    <string name="Place1Title">Rūjiena</string>
+        <string name="Place1Descr">
+            Rūjiena is a town in Valmiera Municipality, in the Vidzeme region of Latvia. As of 2017 its population was 3,007.
+        </string>
+        <string name="Place1LngLat">57.89384262908556, 25.3386254405581</string>
+    <string name="Place2Title"> Mazsalaca </string>
+        <string name="Place2Descr">
+            Mazsalaca is a town in Valmiera Municipality in the Vidzeme region of Latvia. It has 1269 inhabitants.
+        </string>
+        <string name="Place2LngLat">57.86069654002818, 25.053938581073744</string>
+    <string name="Place3Title">Salacgrīva</string>
+        <string name="Place3Descr">
+            Salacgrīva is a town in Salacgrīva Municipality in the Vidzeme region of Latvia.
+            The centre of the area surrounding Salacgrīva is the mouth of Salaca River,
+            and the town\s name literally means \Mouth of Salaca\ in Latvian.
+        </string>
+        <string name="Place3LngLat">57.770367321244386, 24.36052977941047</string>
+    <string name="Place4Title">Limbaži</string>
+        <string name="Place4Descr">
+            Limbaži is a town in the Vidzeme region of northern Latvia. Limbaži is located 90 km northeast
+            of the capital Riga. The population is 6888 people. During the Middle Ages, as part of Livonia,
+            Limbaži was a fortified town with stone walls, second in importance only to Riga.
+        </string>
+        <string name="Place4LngLat">57.51504395380812, 24.720529305795008</string>
+    <string name="Place5Title">Valmiera</string>
+        <string name="Place5Descr">
+            Valmiera is the largest city of the historical Vidzeme region, Latvia, with a total area of 19.35
+            square kilometres. As of 2002, Valmiera had a population of 27,323, and in 2020 – 24 879.
+            It is the seat of Valmiera Municipality.
+        </string>
+        <string name="Place5LngLat">57.531598337692515, 25.423781119233627</string>
+    <string name="Place6Title">Smiltene</string>
+        <string name="Place6Descr">
+            Smiltene is a town in the Vidzeme region in northern Latvia, 132 km northeast of the capital
+            Riga, and the administrative centre of Smiltene Municipality. It has a population of 5,536.
+        </string>
+        <string name="Place6LngLat">57.42327954381972, 25.90154064611188</string>
+    <string name="Place8Title">Cēsis</string>
+        <string name="Place8Descr">
+            Cēsis is a town in northeastern Latvia, known for its medieval castle. First built in the
+            13th century and rebuilt many times since, Cēsis Castle features wall paintings,
+            dungeons and towers with views. Its Castle Park includes an old brewery, a cemetery and
+            the Transfiguration of Christ Orthodox Church. Also on castle grounds, the 18th-century
+            Castle Manor House is home to the Cēsis History and Art Museum.
+        </string>
+        <string name="Place8LngLat">57.30955796296143, 25.263889457035255</string>
+    <string name="Place9Title">Saulkrasti</string>
+        <string name="Place9Descr">
+            Saulkrasti is a town in Latvia on the east coast of the Gulf of Riga and the capital of
+            the Saulkrasti municipality. Made up of a number of historic fishing settlements, the
+            town stretches for some 17 km from the Inčupe river in the south to the village of Skulte in the north.
+        </string>
+        <string name="Place9LngLat">57.26783917449651, 24.410921463443614</string>
+    <string name="Place10Title">Sigulda</string>
+        <string name="Place10Descr">
+            Sigulda is a town in the Vidzeme Region of Latvia, 53 kilometres from the capital city Riga.
+        </string>
+        <string name="Place10LngLat">57.149830418833915, 24.86032460675555</string>
+    <string name="Place11Title">Ādaži</string>
+        <string name="Place11Descr">
+            Ādaži is a town in Pierīga, on the left bank of the Gauja river. Town is administrative
+            center of Ādaži Municipality. It is located by the highway A1, 21.6 km from the center
+            of Riga. Ādaži has administrative offices, schools, Kindergarten Strautins, several shops and service companies.
+        </string>
+        <string name="Place11LngLat">57.06651259931646, 24.343401944734293</string>
+    <string name="Place12Title">Rīga</string>
+        <string name="Place12Descr">
+            Riga, Latvia’s capital, is set on the Baltic Sea at the mouth of the River Daugava.
+            Its considered a cultural center and is home to many museums and concert halls.
+            The city is also known for its wooden buildings, art nouveau architecture and medieval
+            Old Town. The pedestrian-only Old Town has many shops and restaurants and is home to busy
+            Livu Square, with bars and nightclubs.
+        </string>
+        <string name="Place12LngLat">56.9492525748426, 24.1022536572613</string>
+    <string name="Place13Title">Ērgļi</string>
+        <string name="Place13Descr">
+            Ērgļi is a small town in Ērgļi Parish, Madona Municipality in the Vidzeme region of
+            Latvia on the banks of the Ogre river. It serves as the administrative center for
+            Ērgļi Parish. Ērgļi had 2,769 residents as of 2017.
+        </string>
+        <string name="Place13LngLat">56.899063405265565, 25.63980184449221</string>
+    <string name="Place14Title">Gulbene</string>
+        <string name="Place14Descr">
+            Gulbene is a town in northeastern Latvia. It is an administrative center of Gulbene
+            Municipality. The area of this region is 11.898 km², with a population of 29,797
+            inhabitants.
+        </string>
+        <string name="Place14LngLat">57.17148343630817, 26.751777508960682</string>
+    <string name="Place15Title">Alūksne</string>
+        <string name="Place15Descr">
+            Alūksne is a town on the shores of Lake Alūksne in northeastern Latvia near
+            the borders with Estonia and Russia. It is the seat of Alūksne municipality.
+            Alūksne is the highest elevated Latvian city, located in East Vidzeme Upland
+            at 217 m above sea level.
+        </string>
+        <string name="Place15LngLat">57.42073042352515, 27.051321538919982</string>
 </resources>

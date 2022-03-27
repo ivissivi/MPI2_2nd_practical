@@ -130,7 +130,6 @@ public class RepositoryActivity extends AppCompatActivity {
 
             titleText.setText(maintitle.get(position));
             Picasso.get().load(images.get(position)).into(imageView);
-//            imageView.setImageResource();
             subtitleText.setText(description.get(position));
             authorText.setText("by " + author.get(position));
             datePublishedText.setText("Published at: " + datePublished.get(position).substring(0, 10) + " " + datePublished.get(position).substring(11, 16));

@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android2/2ndPractical/app/src/main/res/drawable/ic_baseline_user_loc.xml" value="0.205" />
+        <entry key="..\:/Android2/2ndPractical/app/src/main/res/layout/activity_maps.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ivis3/AndroidStudioProjects/2ndPractical/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2985" />
         <entry key="..\:/Users/ivis3/AndroidStudioProjects/2ndPractical/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2985" />
         <entry key="..\:/Users/ivis3/AndroidStudioProjects/2ndPractical/app/src/main/res/layout-v26/listview_item.xml" value="0.23072916666666668" />
