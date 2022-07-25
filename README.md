@@ -25,6 +25,6 @@ The primary marker to display the users exact position on the map is an icon of 
 Reader activity demonstrates a request to web based API, in this case from https://newsapi.org/. When this activity is opened, in this case, it creates 5 requests to newsapi.org searching for JSON arrays that contain the keyword “Ukraine” and extracts information about titles, descriptions, urls, images, authors and the published dates of the articles. The returned data is loaded in a listview as seen in the images below.
 
 <p align="center">
-  <img src="preview/picture5.png?raw=true" />
-  <img src="preview/picture6.png?raw=true" />
+  <img src="preview/picture5.jpg?raw=true" />
+  <img src="preview/picture6.jpg?raw=true" />
 </p>
